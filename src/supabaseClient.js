@@ -1,7 +1,10 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@supabase/supabase-js';
 
-// Pegue essas variáveis no painel do Supabase
-const supabaseUrl = "https://SEU-PROJETO.supabase.co"
-const supabaseKey = "chave-anon-publica"
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-export const supabase = createClient(supabaseUrl, supabaseKey)
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error('Missing Supabase environment variables. See .env.example');
+}
+
+export const supabase = createClient(supabaseUrl, supabaseKey);

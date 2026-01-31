@@ -12,10 +12,11 @@ export default function Login() {
       email,
       password,
     })
+
     if (error) {
       setMessage("Erro: " + error.message)
     } else {
-      setMessage("Login realizado com sucesso!")
+      setMessage("Login realizado com sucesso! Usuário: " + data.user.email)
     }
   }
 
