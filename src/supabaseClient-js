@@ -1,0 +1,7 @@
+import { createClient } from '@supabase/supabase-js'
+
+// Pegue essas variáveis no painel do Supabase
+const supabaseUrl = "https://SEU-PROJETO.supabase.co"
+const supabaseKey = "chave-anon-publica"
+
+export const supabase = createClient(supabaseUrl, supabaseKey)
